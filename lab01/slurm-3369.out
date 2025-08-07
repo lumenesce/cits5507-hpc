@@ -1,0 +1,8 @@
+Result: 1065171328
+Wall time: 0.000197 seconds
+CPU time: 0.000194 seconds
+dot_product.c:17:23: optimized: loop vectorized using 16 byte vectors
+dot_product.c:17:23: optimized: loop vectorized using 16 byte vectors
+Result: 1065171328
+Wall time: 0.000050 seconds
+CPU time: 0.000049 seconds

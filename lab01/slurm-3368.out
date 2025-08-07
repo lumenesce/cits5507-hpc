@@ -1,0 +1,14 @@
+dot_product.c: In function ‘main’:
+dot_product.c:47:13: error: conflicting types for ‘end’; have ‘clock_t’ {aka ‘long int’}
+   47 |     clock_t end = clock();
+      |             ^~~
+dot_product.c:36:28: note: previous declaration of ‘end’ with type ‘struct timespec’
+   36 |     struct timespec start, end;
+      |                            ^~~
+dot_product.c: In function ‘main’:
+dot_product.c:47:13: error: conflicting types for ‘end’; have ‘clock_t’ {aka ‘long int’}
+   47 |     clock_t end = clock();
+      |             ^~~
+dot_product.c:36:28: note: previous declaration of ‘end’ with type ‘struct timespec’
+   36 |     struct timespec start, end;
+      |                            ^~~
