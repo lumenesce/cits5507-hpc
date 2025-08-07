@@ -2,9 +2,10 @@
 #include <stdio.h>
 #include <time.h>
 
-#define SIZE 65536
+#define SIZES [1, 256, 65536, 262144, 134217728]  // no. of float32s, or 4B, 1KB, 256KB, 1MB, 512MB
 #define FLOAT_MIN 0
-#define FLOAT_MAX 255
+#define FLOAT_MAX 10
+#define SEED 5507
 
 float float_rand( float min, float max )
 {
@@ -23,7 +24,8 @@ int main(int argc, char **argv) {
     float *a = (float *)malloc(SIZE * sizeof(float));
     float *b = (float *)malloc(SIZE * sizeof(float));
 
-    srand(5507);
+    printf("Using seed: %.0f\n", SEED);
+    srand(SEED); // set the seed
 
     // for (int i = 0; i < SIZE; i++) {
     //     a[i] = 1.0;
