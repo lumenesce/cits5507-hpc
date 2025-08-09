@@ -1,0 +1,3 @@
+num_integration.c:38:13: optimized: basic block part vectorized using 16 byte vectors
+num_integration.c:38:13: optimized: basic block part vectorized using 16 byte vectors
+num_integration.c:38:13: optimized: basic block part vectorized using 16 byte vectors
