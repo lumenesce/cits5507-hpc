@@ -1,0 +1,2 @@
+dot_product.c:21:23: optimized: loop vectorized using 16 byte vectors
+dot_product.c:21:23: optimized: loop vectorized using 16 byte vectors
