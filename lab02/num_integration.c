@@ -37,8 +37,8 @@ double parallel_pi_calculation(int num_steps) {
 
     #pragma omp parallel
     {
-        int num_threads = omp_get_num_threads();
-        printf("%d\n", num_threads);
+        // int num_threads = omp_get_num_threads();
+        // printf("%d\n", num_threads);
 
         #pragma omp for reduction(+:sum)
         for (int i = 0; i < num_steps; i++) {
@@ -58,17 +58,18 @@ int main(int argc, char **argv) {
     start_clocks();
     double default_pi = default_pi_calculation(100000);
     stop_clocks(&wall_elapsed, &cpu_elapsed);
-    printf("-------- NO PARALLELISATION, X STEPS ------------------\n");
-    printf("pi=%.6f\n", default_pi);
+    printf("-------- NO PARALLELISATION, 100000 STEPS ------------------\n");
+    printf("pi=%.30f\n", default_pi);
     printf("Wall time elapsed: %f seconds\n", wall_elapsed);
     printf("CPU time elapsed: %f seconds\n\n", cpu_elapsed);
 
-    // Parallelisation ([] threads)
+    // Parallelisation (4 threads)
+    omp_set_num_threads(4); // always use 4 threads
     start_clocks();
     double parallel_pi_1 = parallel_pi_calculation(100000);
     stop_clocks(&wall_elapsed, &cpu_elapsed);
-    printf("-------- PARALLELISATION, X STEPS, X THREADS ----------\n");
-    printf("pi=%.10f\n", parallel_pi_1);
+    printf("-------- PARALLELISATION, 100000 STEPS, 4 THREADS ----------\n");
+    printf("pi=%.30f\n", parallel_pi_1);
     printf("Wall time elapsed: %f seconds\n", wall_elapsed);
     printf("CPU time elapsed: %f seconds\n\n", cpu_elapsed);
 
@@ -76,18 +77,18 @@ int main(int argc, char **argv) {
     start_clocks();
     double parallel_pi_2 = parallel_pi_calculation(10000000);
     stop_clocks(&wall_elapsed, &cpu_elapsed);
-    printf("-------- PARALLELISATION, X STEPS, X THREADS ----------\n");
-    printf("pi=%.10f\n", parallel_pi_2);
+    printf("-------- PARALLELISATION, 10000000 STEPS, 4 THREADS ----------\n");
+    printf("pi=%.30f\n", parallel_pi_2);
     printf("Wall time elapsed: %f seconds\n", wall_elapsed);
     printf("CPU time elapsed: %f seconds\n\n", cpu_elapsed);
 
-    // Parallelisation with increased number of threads ([] threads)
-    omp_set_num_threads(8); // always use X threads
+    // Parallelisation with increased number of threads (8 threads)
+    omp_set_num_threads(8); // always use 8 threads
     start_clocks();
     double parallel_pi_3 = parallel_pi_calculation(10000000);
     stop_clocks(&wall_elapsed, &cpu_elapsed);
-    printf("-------- PARALLELISATION, X STEPS, X THREADS ----------\n");
-    printf("pi=%.10f\n", parallel_pi_3);
+    printf("-------- PARALLELISATION, 10000000 STEPS, 8 THREADS ----------\n");
+    printf("pi=%.30f\n", parallel_pi_3);
     printf("Wall time elapsed: %f seconds\n", wall_elapsed);
     printf("CPU time elapsed: %f seconds", cpu_elapsed);
 

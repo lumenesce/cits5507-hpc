@@ -4,7 +4,7 @@
 #SBATCH --output=num_integration.out
 #SBATCH --error=num_integration.err
 
-#SBATCH --cpus-per-task=4
+#SBATCH --cpus-per-task=8
 #SBATCH --time=00:00:30
 #SBATCH --mem=1G
 #SBATCH --partition=cits3402
