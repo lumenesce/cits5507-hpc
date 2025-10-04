@@ -1,0 +1,5 @@
+matrix_mult.c:18:31: optimized: loop vectorized using 16 byte vectors
+matrix_mult.c:9:13: optimized: basic block part vectorized using 16 byte vectors
+matrix_mult.c:9:13: optimized: basic block part vectorized using 16 byte vectors
+matrix_mult.c:14:13: optimized: basic block part vectorized using 16 byte vectors
+matrix_mult.c:14:13: optimized: basic block part vectorized using 16 byte vectors
